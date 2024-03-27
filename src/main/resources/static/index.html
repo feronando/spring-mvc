@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5f26ae;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(67, 24, 127);
+        }
+    </style>
+</head>
+<body>
+    <form id="form" method="get">
+        <input type="text" name="name" placeholder="Type in your name">
+        <br>
+        <button type="button" onclick="submitForm('/greetingmvc')">MVC greeting</button>
+        <button type="button" onclick="submitForm('/greetingrest')">RESTful greeting</button>
+    </form>
+    <script>
+        function submitForm(act) {
+            let form = document.getElementById("form");
+            form.action = act;
+            form.submit();
+        }
+    </script>
+</body>
+</html>
